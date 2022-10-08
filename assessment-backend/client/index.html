@@ -4,19 +4,23 @@
     <title>Back End Assessment</title>
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body class="container">
-    <button id="complimentButton">Get a compliment</button>
+  <body>
+    <h3>Who Are My Friends?</h3>
+    <button id="myfriends">My Friends</button>
+    <button id="createfriend">Create New Friend</button>    
+    <button id="complimentButton">Get a Compliment</button>
     <button id="fortuneButton">Get a Fortune</button>
-    <button id="friendsButton">Make a New Friend</button>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <h3>Who Are My Enemies?</h3>
+    <button id="myenemies">Remember Enemies</button>
     <script src="main.js"></script>
-    <h3>Enemies</h3>
+    <h3>Add An Enemy</h3>
     <form id = "enemy" class = "enemy">
-      <input type="text" placeholder="Insert Enemy Name">
-      <input type="text" placeholder="Insert Enemy Status"> 
-      <button id = "submit">Submit</button>
+      <input type="text" placeholder="Insert Enemy Name" class="enemy">
+      <input type="text" placeholder="Insert Enemy Status" class="enemy"> 
+      <button id = "submit" class="enemy">Submit</button>
     </form>
     <button id = "enemies">Current Enemy Status</button>
-    
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./main.js"></script>
   </body>
 </html>
