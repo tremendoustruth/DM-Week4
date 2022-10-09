@@ -11,7 +11,7 @@ const {
     getFortune,
     createFriend,
     deleteFriend,
-    updateFriend
+    forgiveFriend
     // addEnemy,
     // updateEnemy
  } = require('./controller')
@@ -21,7 +21,7 @@ app.get("/api/compliment", getCompliment);
 app.get("/api/fortune", getFortune);
 app.post("/api/friends", createFriend);
 app.delete("/api/friends/:id", deleteFriend);
-app.put("api/friends/:id", updateFriend);
+app.put("api/friends/:id", forgiveFriend);
 
 // app.delete("/api/enemies", deleteEnemy);
 // app.post("/api/enemies", addEnemy);

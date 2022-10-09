@@ -79,10 +79,10 @@ module.exports = {
         res.status(200).send(friends)
         console.log(friends)
     },
-    updateFriend: (req, res) => {
+    forgiveFriend: (req, res) => {
         let id = req.params.id
         console.log(id);
-        let {newRating}  = req.body 
+        let newRating = 5 //forgiving friend resets them to a neutral 5 rating
         for (friend of friends){
             if(friend.id===id){friend.rating = newRating}
         }

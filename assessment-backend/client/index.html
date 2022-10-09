@@ -17,28 +17,29 @@
     <form class="deleteid">
       <fieldset>
         <h5>Delete Friend</h5>
-        <input type="number" class="testing">
+        <input type="number" class="testing" placeholder="friend id">
         <input type="submit">
       </fieldset>
     </form>
-    <form class="update">
+    <form class="forgive">
       <fieldset>
-        <h5>Update Rating</h5>
+        <h5>Forgive Friend</h5>
         <input type="number" class="friendid" placeholder="friend id">
-        <input type="number" class="newrating" placeholder="new rating">
         <input type="submit">
       </fieldset>
     </form>
     <!-- <button id="myfriends">Remember Friends</button>    -->
-    <button id="complimentButton">Get a Compliment</button>
-    <button id="fortuneButton">Get a Fortune</button>
+    <div>
+      <button id="complimentButton">Get a Compliment</button>
+      <button id="fortuneButton">Get a Fortune</button>
+    </div>
     <h3>Who Are My Enemies?</h3>
     <button id="myenemies">Remember Enemies</button>
     <h3>Add An Enemy</h3>
     <form id = "enemy" class = "enemy">
       <input type="text" placeholder="Insert Enemy Name" class="enemy">
       <input type="text" placeholder="Insert Enemy Status" class="enemy"> 
-      <input type = "submit" class="enemy">Submit</button>
+      <input type = "submit" class="enemy">
     </form>
     <button id = "enemies">Current Enemy Status</button>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

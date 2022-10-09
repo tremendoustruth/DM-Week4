@@ -2,7 +2,7 @@ let complimentBtn = document.getElementById("complimentButton");
 let fortuneBtn = document.getElementById("fortuneButton");
 let makefriend = document.querySelector(".friend");
 let deletefriend = document.querySelector(".deleteid");
-let updatefriend = document.querySelector(".update");
+let forgivefriend = document.querySelector(".forgive");
 
 const getCompliment = (evt) => {
     axios.get("http://localhost:4000/api/compliment")
@@ -29,11 +29,10 @@ const deleteFriend = (e) => {
         alert("No more friend")})
 }
 
-const updateFriend = (e) => {
-    let id  = document.querySelector(".friendid").value
-    let newRating = document.querySelector(".newrating").value
-    axios.put(`http://localhost:4000/api/friends/${id}`, newRating).then(res => {
-        alert("success, your friend has a new rating")})
+const forgiveFriend = (e) => {
+    let id  = document.querySelector(".friendid").value  
+    axios.put(`http://localhost:4000/api/friends/${id}`, rating).then(res => {
+        alert("you have forgiven your friend")})
 }
 
 function friendHandler(e) {
@@ -52,7 +51,7 @@ complimentBtn.addEventListener("click", getCompliment)
 fortuneBtn.addEventListener("click", getFortune)
 makefriend.addEventListener("submit", friendHandler)
 deletefriend.addEventListener("submit", deleteFriend)
-updatefriend.addEventListener("submit", updateFriend)
+forgivefriend.addEventListener("submit", forgiveFriend)
 // currentEnemies.addEventListener('click', getEnemies);
 // submitEnemies.addEventListener('submit', addEnemy);
 
