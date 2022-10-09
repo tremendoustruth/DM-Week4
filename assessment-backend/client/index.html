@@ -6,18 +6,39 @@
   </head>
   <body>
     <h3>Who Are My Friends?</h3>
-    <button id="myfriends">My Friends</button>
-    <button id="createfriend">Create New Friend</button>    
+    <form id = "friend" class = "friend">
+        <fieldset>
+          <h5>Create Friend</h5>
+          <input type="text" placeholder="Insert Friend Name" class="name">
+          <input type="number" placeholder="Insert Friend Rating" class="rating"> 
+          <input type="submit">
+        </fieldset>
+    </form>
+    <form class="deleteid">
+      <fieldset>
+        <h5>Delete Friend</h5>
+        <input type="number" class="testing">
+        <input type="submit">
+      </fieldset>
+    </form>
+    <form class="update">
+      <fieldset>
+        <h5>Update Rating</h5>
+        <input type="number" class="friendid" placeholder="friend id">
+        <input type="number" class="newrating" placeholder="new rating">
+        <input type="submit">
+      </fieldset>
+    </form>
+    <!-- <button id="myfriends">Remember Friends</button>    -->
     <button id="complimentButton">Get a Compliment</button>
     <button id="fortuneButton">Get a Fortune</button>
     <h3>Who Are My Enemies?</h3>
     <button id="myenemies">Remember Enemies</button>
-    <script src="main.js"></script>
     <h3>Add An Enemy</h3>
     <form id = "enemy" class = "enemy">
       <input type="text" placeholder="Insert Enemy Name" class="enemy">
       <input type="text" placeholder="Insert Enemy Status" class="enemy"> 
-      <button id = "submit" class="enemy">Submit</button>
+      <input type = "submit" class="enemy">Submit</button>
     </form>
     <button id = "enemies">Current Enemy Status</button>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>

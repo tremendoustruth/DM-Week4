@@ -5,6 +5,12 @@ let friends = [
     {"id": 4, "name": "David", "rating": 9},
     {"id": 5, "name": "Ellen", "rating": 4}
 ]
+let id = 4
+let newRating  = 5
+for (friend of friends){
+        if(friend.id===id){friend.rating = newRating}}
+console.log(friends)
+
 let enemies = [
     {"id": 1, "name": "Obliterator", "status": "at large"},
     {"id": 2, "name": "Defenestrator", "status": "at large"},
@@ -15,7 +21,8 @@ let enemies = [
 let compliments = [
     "Gee, you're a smart cookie!", 
     "Cool shirt!", 
-    "Your Javascript skills are stellar."
+    "Your Javascript skills are stellar.",
+    "Your beauty soothes the hearts of all who encounter it."
 ]
 let fortunes = [
     "A gambler will not only lose what he has but what he doesn't have.",
@@ -44,7 +51,7 @@ module.exports = {
         console.log(randomFortune);
     },
     getFriends: (req, res) => {
-        // select a new friend
+        // select a friend
         let randomIndex = Math.floor(Math.random() * friends.length);
         let myFriend = friends[randomIndex];
         res.status(200).send(myFriend);
@@ -53,7 +60,7 @@ module.exports = {
     createFriend: (req, res) => {
         let { name, rating } = req.body
         let newFriend = {
-            id: globalId,
+            id: globalID,
             name,
             rating
         }   
@@ -61,13 +68,25 @@ module.exports = {
         res.status(200).send(friends)
         globalID++
         console.log(friends)
+    },
+    deleteFriend: (req, res) => {
+        //user makes a delete request with friend ID
+        let id = req.params.id
+        console.log(id);
+        let index = friends.findIndex(friend => friend.id === +id)
+        console.log(index)
+        friends.splice(index, 1)
+        res.status(200).send(friends)
+        console.log(friends)
+    },
+    updateFriend: (req, res) => {
+        let id = req.params.id
+        console.log(id);
+        let {newRating}  = req.body 
+        for (friend of friends){
+            if(friend.id===id){friend.rating = newRating}
         }
-    // updateEnemy: (req, res) => {
-
-    // },
-    // deleteFriend: (req, res) => {
-    //     //find the index of delete_friend in the friend array
-    //     let deleteFriend = {"id": globalID, "name": "Bob", "rating": 6}
-    //     let index = friends.findIndex(deleteFriend => .id===deleteFriend.id)
-    // }
+        res.status(200).send(friends)
+        console.log(friends)
+    }
 }
