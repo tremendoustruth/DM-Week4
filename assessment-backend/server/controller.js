@@ -5,11 +5,7 @@ let friends = [
     {"id": 4, "name": "David", "rating": 9},
     {"id": 5, "name": "Ellen", "rating": 4}
 ]
-let id = 4
-let newRating  = 5
-for (friend of friends){
-        if(friend.id===id){friend.rating = newRating}}
-console.log(friends)
+
 
 let enemies = [
     {"id": 1, "name": "Obliterator", "status": "at large"},
@@ -81,10 +77,14 @@ module.exports = {
     },
     forgiveFriend: (req, res) => {
         let id = req.params.id
-        console.log(id);
-        let newRating = 5 //forgiving friend resets them to a neutral 5 rating
+        let name = req.body.name
+        let rating = req.body.rating     
+        console.log(id)
         for (friend of friends){
-            if(friend.id===id){friend.rating = newRating}
+            if(friend.id===id){
+                friend.rating=rating
+                friend.name=name
+            }
         }
         res.status(200).send(friends)
         console.log(friends)

@@ -4,7 +4,7 @@ let makefriend = document.querySelector(".friend");
 let deletefriend = document.querySelector(".deleteid");
 let forgivefriend = document.querySelector(".forgive");
 
-const getCompliment = (evt) => {
+const getCompliment = (e) => {
     axios.get("http://localhost:4000/api/compliment")
         .then(res => {
             const data = res.data
@@ -31,8 +31,12 @@ const deleteFriend = (e) => {
 
 const forgiveFriend = (e) => {
     let id  = document.querySelector(".friendid").value  
-    axios.put(`http://localhost:4000/api/friends/${id}`, rating).then(res => {
+    axios.put(`http://localhost:4000/api/friends/${id}`, {
+        name: "Angel",
+        rating: "forgiven"
+    }).then(res => {
         alert("you have forgiven your friend")})
+        
 }
 
 function friendHandler(e) {
